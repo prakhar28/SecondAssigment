@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://127.0.0.1:27017/documentManager')
+mongoose.connect('mongodb://127.0.0.1:27017/docManager')
 
 // Define the schema for the Document model
 const documentSchema = new mongoose.Schema({
