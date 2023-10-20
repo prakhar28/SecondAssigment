@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        h1 {
+            color: black;
+            padding: 10px;
+        }
+        form {
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 300px;
+            text-align: center; /* Center the form contents */
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        textarea {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        #navbar {
+            margin-top: 20px; /* Add margin to the last div */
+        }
+    </style>
+</head>
+<body>
+<h1>Update Document</h1>
+<form method="POST" action="/documents/edit/<%= document._id %>">
+    <label for="title">Title:</label>
+    <textarea name="title" id="title"><%= document.title %></textarea><br>
+    <label for="contents">Contents:</label>
+    <textarea name="contents" id="contents"><%= document.contents %></textarea><br>
+    <input type="submit" value="Save Changes">
+</form>
+<div id="navbar">
+    <a href="/documents">Go back to Documents</a>
+</div>
+</body>
+</html>
